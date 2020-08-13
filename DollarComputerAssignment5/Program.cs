@@ -8,6 +8,10 @@ namespace DollarComputerAssignment5
 {
     static class Program
     {
+        public static SplashForm splashForm;
+        public static StartForm startForm;
+        public static SelectForm selectForm;
+        public static ProductionInfoForm productionInfoForm;
         /// <summary>
         /// The main entry point for the application.
         /// </summary>
@@ -16,6 +20,10 @@ namespace DollarComputerAssignment5
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+            startForm = new StartForm();
+            selectForm = new SelectForm();
+            productionInfoForm = new ProductionInfoForm();
+
             Application.Run(new SplashForm());
         }
     }

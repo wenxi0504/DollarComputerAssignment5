@@ -16,5 +16,12 @@ namespace DollarComputerAssignment5
         {
             InitializeComponent();
         }
+
+        private void Splashtimer_Tick(object sender, EventArgs e)
+        {
+            Program.startForm.Show();
+            this.Hide();
+            Splashtimer.Enabled = false;
+        }
     }
 }
