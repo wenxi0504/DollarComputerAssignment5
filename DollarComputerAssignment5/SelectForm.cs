@@ -23,5 +23,26 @@ namespace DollarComputerAssignment5
             this.productsTableAdapter.Fill(this.dollarComputersDataSet.products);
 
         }
+
+        private void ComputerHardwareDataGridView_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            var manufacturer = ComputerHardwareDataGridView.SelectedRows[0].Cells[1].Value;
+            var model= ComputerHardwareDataGridView.SelectedRows[0].Cells[2].Value;
+            var cost =ComputerHardwareDataGridView.SelectedRows[0].Cells[3].Value;
+            SelectionOutputTextBox.Text = $" {manufacturer} {model} {cost} ";
+            NextSelectButton.Enabled = true;
+        }
+
+        private void CancelSelectButton_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void NextSelectButton_Click(object sender, EventArgs e)
+        {
+            Program.productionInfoForm.Show();
+            this.Hide();
+           
+        }
     }
 }
