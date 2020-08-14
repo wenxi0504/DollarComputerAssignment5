@@ -491,10 +491,12 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ControlBox = false;
             this.Controls.Add(this.ComputerHardwareDataGridView);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.ComputerSelectionLabel);
             this.Name = "SelectForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "SelectForm";
             this.Load += new System.EventHandler(this.SelectForm_Load);
             this.groupBox1.ResumeLayout(false);
