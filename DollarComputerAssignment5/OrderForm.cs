@@ -16,5 +16,7 @@ namespace DollarComputerAssignment5
         {
             InitializeComponent();
         }
+
+       
     }
 }

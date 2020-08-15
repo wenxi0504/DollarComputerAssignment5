@@ -32,9 +32,19 @@ namespace DollarComputerAssignment5
 
         }
 
-        private void GPUlabel_Click(object sender, EventArgs e)
-        {
+       
 
+        private void NextButton_Click(object sender, EventArgs e)
+        {
+            Program.orderForm.Show();
+            this.Hide();
+
+        }
+
+        private void SelectAnotherProductButton_Click(object sender, EventArgs e)
+        {
+            Program.selectForm.Show();
+            this.Hide();
         }
     }
 }
