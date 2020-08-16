@@ -36,25 +36,21 @@ namespace DollarComputerAssignment5
             get { return CosttextBox.Text; }
             set { }
         }
-       
         public string PPlatform
         {
             get { return PlatformTextBox.Text; }
             set { }
         }
-        
         public string POS
         {
             get {return OStextBox.Text; }
             set { }
         }
-
         public string PManufacturer
         {
             get { return ManufacturertextBox.Text; }
             set { }
         }
-
         public string PModel
         {
             get { return ModeltextBox.Text; }
@@ -70,25 +66,21 @@ namespace DollarComputerAssignment5
             get { return ScreenSizetextBox.Text; }
             set { }
         }
-
         public string PHDD
         {
             get { return HDDtextBox.Text; }
             set { }
         }
-
         public string PCPUBrand
         {
             get { return CPUBrandtextBox.Text; }
             set { }
         }
-
         public string PCPUNumber
         {
             get { return CPUNumbertextBox.Text; }
             set { }
         }
-
         public string PGPUType
         {
             get { return GPUTypetextBox.Text; }
@@ -104,20 +96,16 @@ namespace DollarComputerAssignment5
             get { return CPUSpeedtextBox.Text; }
             set { }
         }
-        public string WebCam
+        public string PWebCam
         {
             get { return WebCamtextBox.Text; }
             set { }
         }
 
-        
-
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Application.Exit();
         }
-
-
 
         public void ProductionInfoForm_Load(object sender, EventArgs e)
         {
@@ -140,27 +128,21 @@ namespace DollarComputerAssignment5
             NextButton.Enabled = true;
 
         }
-
-
-
         private void NextButton_Click(object sender, EventArgs e)
         {
             Program.orderForm.Show();
             this.Hide();
 
         }
-
         private void SelectAnotherProductButton_Click(object sender, EventArgs e)
         {
             Program.selectForm.Show();
             this.Hide();
         }
-
         private void CancelButton_Click(object sender, EventArgs e)
         {
             Application.Exit();
         }
-
         private void saveToolStripMenuItem_Click(object sender, EventArgs e)
         {
             // configure the save file dialog
@@ -175,11 +157,23 @@ namespace DollarComputerAssignment5
                 StreamWriter streamWriter = new StreamWriter(ProductionInfosaveFileDialog.FileName);
 
                 // write to the file
+                streamWriter.WriteLine(Program.productionInfoForm.PProductID);
                 streamWriter.WriteLine(Program.productionInfoForm.PCondition);
-
+                streamWriter.WriteLine(Program.productionInfoForm.PCost);
+                streamWriter.WriteLine(Program.productionInfoForm.PPlatform);
+                streamWriter.WriteLine(Program.productionInfoForm.POS);
+                streamWriter.WriteLine(Program.productionInfoForm.PManufacturer);
+                streamWriter.WriteLine(Program.productionInfoForm.PModel);
+                streamWriter.WriteLine(Program.productionInfoForm.PMemory);
+                streamWriter.WriteLine(Program.productionInfoForm.PScreenSize);
+                streamWriter.WriteLine(Program.productionInfoForm.PHDD);
+                streamWriter.WriteLine(Program.productionInfoForm.PCPUBrand);
+                streamWriter.WriteLine(Program.productionInfoForm.PCPUNumber);
+                streamWriter.WriteLine(Program.productionInfoForm.PGPUType);
+                streamWriter.WriteLine(Program.productionInfoForm.PCPUType);
+                streamWriter.WriteLine(Program.productionInfoForm.PCPUSpeed);
+                streamWriter.WriteLine(Program.productionInfoForm.PWebCam);
                 
-
-
                 // clean up
                 streamWriter.Flush();
                 streamWriter.Close();
@@ -190,8 +184,7 @@ namespace DollarComputerAssignment5
         {
             throw new NotImplementedException();
         }
-      
-
+        
         private void openToolStripMenuItem_Click(object sender, EventArgs e)
         {
             // configure the open file dialog

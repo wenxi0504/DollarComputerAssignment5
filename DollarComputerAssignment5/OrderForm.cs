@@ -31,24 +31,19 @@ namespace DollarComputerAssignment5
         private void OrderForm_Load(object sender, EventArgs e)
         {
             ConditionOrderformtextBox.Text = Program.productionInfoForm.PCondition;
-            //PlatformTextBox.Text=
-            //    ManufacturerTextBox.Text=
-            //        ModeltextBox.Text=
-            //            ScreenSizeTextBox.Text=
-            //                MemoryTextBox.Text=
-            //                    CPUBrandtextBox.Text=
-            //                        CPUTypeTextBox.Text=
-            //                            CPUNumberTextBox.Text=
-            //                                CPUSpeedTextBox.Text=
-            //                                    HDDtextBox.Text=
-            //                                        GPUTypeTextBox.Text= 
-            //                                            WebcamtextBox.Text=
-            //OStextBox.Text=
-
-
-
-
-
+            PlatformTextBox.Text = Program.productionInfoForm.PPlatform;
+            ManufacturerTextBox.Text = Program.productionInfoForm.PManufacturer;
+            ModeltextBox.Text = Program.productionInfoForm.PModel;
+            ScreenSizeTextBox.Text = Program.productionInfoForm.PScreenSize;
+            MemoryTextBox.Text = Program.productionInfoForm.PMemory;
+            CPUBrandtextBox.Text = Program.productionInfoForm.PCPUBrand;
+            CPUTypeTextBox.Text = Program.productionInfoForm.PCPUType;
+            CPUNumberTextBox.Text = Program.productionInfoForm.PCPUNumber;
+            CPUSpeedTextBox.Text = Program.productionInfoForm.PCPUSpeed;
+            HDDtextBox.Text = Program.productionInfoForm.PHDD;
+            GPUTypeTextBox.Text = Program.productionInfoForm.PGPUType;
+            WebcamtextBox.Text = Program.productionInfoForm.PWebCam;
+            OStextBox.Text = Program.productionInfoForm.POS;
         }
 
         private void ConditionOrderformtextBox_TextChanged(object sender, EventArgs e)
