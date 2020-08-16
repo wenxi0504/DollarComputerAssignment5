@@ -74,6 +74,8 @@ namespace DollarComputerAssignment5
             Program.productionInfoForm.Show();
             this.Hide();
            
+
         }
+      
     }
 }

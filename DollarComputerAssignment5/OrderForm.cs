@@ -46,9 +46,6 @@ namespace DollarComputerAssignment5
             OStextBox.Text = Program.productionInfoForm.POS;
         }
 
-        private void ConditionOrderformtextBox_TextChanged(object sender, EventArgs e)
-        {
-           
-        }
+       
     }
 }

@@ -15,7 +15,6 @@ namespace DollarComputerAssignment5
     public partial class ProductionInfoForm : Form, IEnumerable
     {
 
-        public List<ProductionInfoForm> ProductionInfo{ get; set; }
         public ProductionInfoForm()
         {
             InitializeComponent();
@@ -138,7 +137,32 @@ namespace DollarComputerAssignment5
         {
             Program.selectForm.Show();
             this.Hide();
+            ResetProductionInfoForm();
+           
         }
+
+        private void ResetProductionInfoForm()
+        {
+            ProductIDtextBox.Text= string.Empty;
+            ConditionTextBox.Text = " ";
+            CosttextBox.Text = " ";
+            PlatformTextBox.Text = " ";
+            OStextBox.Text = " ";
+            ManufacturertextBox.Text = " ";
+            ModeltextBox.Text = " ";
+            MemorytextBox.Text = "";
+            ScreenSizetextBox.Text = "";
+            HDDtextBox.Text = "";
+            CPUBrandtextBox.Text = "";
+            CPUNumbertextBox.Text = "";
+            GPUTypetextBox.Text = "";
+            CPUTypetextBox.Text = "";
+            CPUSpeedtextBox.Text = "";
+            WebCamtextBox.Text = "";
+
+
+        }
+
         private void CancelButton_Click(object sender, EventArgs e)
         {
             Application.Exit();
@@ -197,18 +221,28 @@ namespace DollarComputerAssignment5
             {
                 // create a new stream reader
                 StreamReader streamReader = new StreamReader(ProductInfoOpenFileDialog.FileName);
-                ProductionInfo = new List<ProductionInfoForm>();
-                // read in the list
+            
+                // read the file
 
                 while (!streamReader.EndOfStream)
                 {
-                    streamReader.ReadLine();
-                    //ContactListBox.Items.Add(streamReader.ReadLine());
-                    streamReader.ReadLine();
-                    streamReader.ReadLine();
+                    ProductIDtextBox.Text = streamReader.ReadLine();
+                    ConditionTextBox.Text = streamReader.ReadLine();
+                    CosttextBox.Text = streamReader.ReadLine();
+                    PlatformTextBox.Text = streamReader.ReadLine();
+                    OStextBox.Text = streamReader.ReadLine();
+                    ManufacturertextBox.Text = streamReader.ReadLine();
+                    ModeltextBox.Text = streamReader.ReadLine();
+                    MemorytextBox.Text = streamReader.ReadLine();
+                    ScreenSizetextBox.Text = streamReader.ReadLine();
+                    HDDtextBox.Text = streamReader.ReadLine();
+                    CPUBrandtextBox.Text = streamReader.ReadLine();
+                    CPUNumbertextBox.Text = streamReader.ReadLine();
+                    GPUTypetextBox.Text = streamReader.ReadLine();
+                    CPUTypetextBox.Text= streamReader.ReadLine();
+                    CPUSpeedtextBox.Text = streamReader.ReadLine();
+                    WebCamtextBox.Text= streamReader.ReadLine();
                 }
-
-
 
                 // cleanup
                 streamReader.Close();
