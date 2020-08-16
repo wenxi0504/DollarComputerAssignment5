@@ -63,8 +63,8 @@
             this.CPUSpeedlabel = new System.Windows.Forms.Label();
             this.CPUNumbertextBox = new System.Windows.Forms.TextBox();
             this.CPUNumberabel = new System.Windows.Forms.Label();
-            this.RAMSizetextBox = new System.Windows.Forms.TextBox();
-            this.RAMlSizeabel = new System.Windows.Forms.Label();
+            this.ScreenSizetextBox = new System.Windows.Forms.TextBox();
+            this.ScreenSizeabel = new System.Windows.Forms.Label();
             this.CPUTypetextBox = new System.Windows.Forms.TextBox();
             this.CPUTypelabel = new System.Windows.Forms.Label();
             this.CPUBrandtextBox = new System.Windows.Forms.TextBox();
@@ -75,6 +75,8 @@
             this.SelectAnotherProductButton = new System.Windows.Forms.Button();
             this.CancelButton = new System.Windows.Forms.Button();
             this.NextButton = new System.Windows.Forms.Button();
+            this.ProductionInfosaveFileDialog = new System.Windows.Forms.SaveFileDialog();
+            this.ProductInfoOpenFileDialog = new System.Windows.Forms.OpenFileDialog();
             this.ProductionInfoMenu.SuspendLayout();
             this.ProductGroupBox.SuspendLayout();
             this.ProductInfoGroupBox.SuspendLayout();
@@ -90,7 +92,7 @@
             this.editToolStripMenuItem});
             this.ProductionInfoMenu.Location = new System.Drawing.Point(0, 0);
             this.ProductionInfoMenu.Name = "ProductionInfoMenu";
-            this.ProductionInfoMenu.Size = new System.Drawing.Size(811, 33);
+            this.ProductionInfoMenu.Size = new System.Drawing.Size(811, 36);
             this.ProductionInfoMenu.TabIndex = 0;
             this.ProductionInfoMenu.Text = "menuStrip1";
             // 
@@ -101,34 +103,36 @@
             this.saveToolStripMenuItem,
             this.exitToolStripMenuItem});
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
-            this.fileToolStripMenuItem.Size = new System.Drawing.Size(54, 29);
+            this.fileToolStripMenuItem.Size = new System.Drawing.Size(54, 30);
             this.fileToolStripMenuItem.Text = "File";
             // 
             // openToolStripMenuItem
             // 
             this.openToolStripMenuItem.Name = "openToolStripMenuItem";
-            this.openToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
+            this.openToolStripMenuItem.Size = new System.Drawing.Size(158, 34);
             this.openToolStripMenuItem.Text = "Open";
+            this.openToolStripMenuItem.Click += new System.EventHandler(this.openToolStripMenuItem_Click);
             // 
             // saveToolStripMenuItem
             // 
             this.saveToolStripMenuItem.Name = "saveToolStripMenuItem";
-            this.saveToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
+            this.saveToolStripMenuItem.Size = new System.Drawing.Size(158, 34);
             this.saveToolStripMenuItem.Text = "Save";
+            this.saveToolStripMenuItem.Click += new System.EventHandler(this.saveToolStripMenuItem_Click);
             // 
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(158, 34);
             this.exitToolStripMenuItem.Text = "Exit";
-            this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
+            this.exitToolStripMenuItem.Click += new System.EventHandler(this.CancelButton_Click);
             // 
             // editToolStripMenuItem
             // 
             this.editToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.selectAnotherToolStripMenuItem});
             this.editToolStripMenuItem.Name = "editToolStripMenuItem";
-            this.editToolStripMenuItem.Size = new System.Drawing.Size(58, 29);
+            this.editToolStripMenuItem.Size = new System.Drawing.Size(58, 30);
             this.editToolStripMenuItem.Text = "Edit";
             // 
             // selectAnotherToolStripMenuItem
@@ -136,6 +140,7 @@
             this.selectAnotherToolStripMenuItem.Name = "selectAnotherToolStripMenuItem";
             this.selectAnotherToolStripMenuItem.Size = new System.Drawing.Size(301, 34);
             this.selectAnotherToolStripMenuItem.Text = "Select Another Product ";
+            this.selectAnotherToolStripMenuItem.Click += new System.EventHandler(this.SelectAnotherProductButton_Click);
             // 
             // ProductID
             // 
@@ -184,7 +189,7 @@
             // ProductIDtextBox
             // 
             this.ProductIDtextBox.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.ProductIDtextBox.Location = new System.Drawing.Point(110, 18);
+            this.ProductIDtextBox.Location = new System.Drawing.Point(111, 18);
             this.ProductIDtextBox.Name = "ProductIDtextBox";
             this.ProductIDtextBox.ReadOnly = true;
             this.ProductIDtextBox.Size = new System.Drawing.Size(158, 26);
@@ -236,7 +241,7 @@
             this.ModeltextBox.Name = "ModeltextBox";
             this.ModeltextBox.ReadOnly = true;
             this.ModeltextBox.Size = new System.Drawing.Size(395, 26);
-            this.ModeltextBox.TabIndex = 7;
+            this.ModeltextBox.TabIndex = 10;
             this.ModeltextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // ManufacturertextBox
@@ -246,7 +251,7 @@
             this.ManufacturertextBox.Name = "ManufacturertextBox";
             this.ManufacturertextBox.ReadOnly = true;
             this.ManufacturertextBox.Size = new System.Drawing.Size(158, 26);
-            this.ManufacturertextBox.TabIndex = 6;
+            this.ManufacturertextBox.TabIndex = 9;
             this.ManufacturertextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // OStextBox
@@ -256,7 +261,7 @@
             this.OStextBox.Name = "OStextBox";
             this.OStextBox.ReadOnly = true;
             this.OStextBox.Size = new System.Drawing.Size(395, 26);
-            this.OStextBox.TabIndex = 5;
+            this.OStextBox.TabIndex = 8;
             this.OStextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // PlatformTextBox
@@ -266,7 +271,7 @@
             this.PlatformTextBox.Name = "PlatformTextBox";
             this.PlatformTextBox.ReadOnly = true;
             this.PlatformTextBox.Size = new System.Drawing.Size(158, 26);
-            this.PlatformTextBox.TabIndex = 4;
+            this.PlatformTextBox.TabIndex = 7;
             this.PlatformTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // Modellabel
@@ -286,7 +291,6 @@
             this.Manufacturerlabel.TabIndex = 2;
             this.Manufacturerlabel.Text = "Manufacturer";
             this.Manufacturerlabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.Manufacturerlabel.Click += new System.EventHandler(this.label2_Click);
             // 
             // OSlabel
             // 
@@ -318,8 +322,8 @@
             this.TechSpecsGroupBox.Controls.Add(this.CPUSpeedlabel);
             this.TechSpecsGroupBox.Controls.Add(this.CPUNumbertextBox);
             this.TechSpecsGroupBox.Controls.Add(this.CPUNumberabel);
-            this.TechSpecsGroupBox.Controls.Add(this.RAMSizetextBox);
-            this.TechSpecsGroupBox.Controls.Add(this.RAMlSizeabel);
+            this.TechSpecsGroupBox.Controls.Add(this.ScreenSizetextBox);
+            this.TechSpecsGroupBox.Controls.Add(this.ScreenSizeabel);
             this.TechSpecsGroupBox.Controls.Add(this.CPUTypetextBox);
             this.TechSpecsGroupBox.Controls.Add(this.CPUTypelabel);
             this.TechSpecsGroupBox.Controls.Add(this.CPUBrandtextBox);
@@ -341,7 +345,7 @@
             this.WebCamtextBox.Name = "WebCamtextBox";
             this.WebCamtextBox.ReadOnly = true;
             this.WebCamtextBox.Size = new System.Drawing.Size(239, 26);
-            this.WebCamtextBox.TabIndex = 17;
+            this.WebCamtextBox.TabIndex = 19;
             this.WebCamtextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // WebCamlabel
@@ -361,7 +365,7 @@
             this.GPUTypetextBox.Name = "GPUTypetextBox";
             this.GPUTypetextBox.ReadOnly = true;
             this.GPUTypetextBox.Size = new System.Drawing.Size(239, 26);
-            this.GPUTypetextBox.TabIndex = 15;
+            this.GPUTypetextBox.TabIndex = 16;
             this.GPUTypetextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // GPUlabel
@@ -401,7 +405,7 @@
             this.CPUSpeedtextBox.Name = "CPUSpeedtextBox";
             this.CPUSpeedtextBox.ReadOnly = true;
             this.CPUSpeedtextBox.Size = new System.Drawing.Size(108, 26);
-            this.CPUSpeedtextBox.TabIndex = 11;
+            this.CPUSpeedtextBox.TabIndex = 18;
             this.CPUSpeedtextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // CPUSpeedlabel
@@ -420,7 +424,7 @@
             this.CPUNumbertextBox.Name = "CPUNumbertextBox";
             this.CPUNumbertextBox.ReadOnly = true;
             this.CPUNumbertextBox.Size = new System.Drawing.Size(105, 26);
-            this.CPUNumbertextBox.TabIndex = 9;
+            this.CPUNumbertextBox.TabIndex = 15;
             this.CPUNumbertextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // CPUNumberabel
@@ -432,25 +436,25 @@
             this.CPUNumberabel.TabIndex = 8;
             this.CPUNumberabel.Text = "CPU Number";
             // 
-            // RAMSizetextBox
+            // ScreenSizetextBox
             // 
-            this.RAMSizetextBox.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.RAMSizetextBox.Location = new System.Drawing.Point(326, 29);
-            this.RAMSizetextBox.Name = "RAMSizetextBox";
-            this.RAMSizetextBox.ReadOnly = true;
-            this.RAMSizetextBox.Size = new System.Drawing.Size(105, 26);
-            this.RAMSizetextBox.TabIndex = 7;
-            this.RAMSizetextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.ScreenSizetextBox.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.ScreenSizetextBox.Location = new System.Drawing.Point(326, 29);
+            this.ScreenSizetextBox.Name = "ScreenSizetextBox";
+            this.ScreenSizetextBox.ReadOnly = true;
+            this.ScreenSizetextBox.Size = new System.Drawing.Size(105, 26);
+            this.ScreenSizetextBox.TabIndex = 12;
+            this.ScreenSizetextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // RAMlSizeabel
+            // ScreenSizeabel
             // 
-            this.RAMlSizeabel.AutoSize = true;
-            this.RAMlSizeabel.Location = new System.Drawing.Point(240, 34);
-            this.RAMlSizeabel.Name = "RAMlSizeabel";
-            this.RAMlSizeabel.Size = new System.Drawing.Size(80, 20);
-            this.RAMlSizeabel.TabIndex = 6;
-            this.RAMlSizeabel.Text = "RAM Size";
-            this.RAMlSizeabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.ScreenSizeabel.AutoSize = true;
+            this.ScreenSizeabel.Location = new System.Drawing.Point(231, 34);
+            this.ScreenSizeabel.Name = "ScreenSizeabel";
+            this.ScreenSizeabel.Size = new System.Drawing.Size(95, 20);
+            this.ScreenSizeabel.TabIndex = 6;
+            this.ScreenSizeabel.Text = "Screen Size";
+            this.ScreenSizeabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // CPUTypetextBox
             // 
@@ -459,7 +463,7 @@
             this.CPUTypetextBox.Name = "CPUTypetextBox";
             this.CPUTypetextBox.ReadOnly = true;
             this.CPUTypetextBox.Size = new System.Drawing.Size(105, 26);
-            this.CPUTypetextBox.TabIndex = 5;
+            this.CPUTypetextBox.TabIndex = 17;
             this.CPUTypetextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // CPUTypelabel
@@ -478,7 +482,7 @@
             this.CPUBrandtextBox.Name = "CPUBrandtextBox";
             this.CPUBrandtextBox.ReadOnly = true;
             this.CPUBrandtextBox.Size = new System.Drawing.Size(101, 26);
-            this.CPUBrandtextBox.TabIndex = 3;
+            this.CPUBrandtextBox.TabIndex = 14;
             this.CPUBrandtextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // CPUBrandlabel
@@ -497,7 +501,7 @@
             this.MemorytextBox.Name = "MemorytextBox";
             this.MemorytextBox.ReadOnly = true;
             this.MemorytextBox.Size = new System.Drawing.Size(102, 26);
-            this.MemorytextBox.TabIndex = 1;
+            this.MemorytextBox.TabIndex = 11;
             this.MemorytextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // Memorylabel
@@ -538,6 +542,7 @@
             this.CancelButton.TabIndex = 7;
             this.CancelButton.Text = "Cancel";
             this.CancelButton.UseVisualStyleBackColor = true;
+            this.CancelButton.Click += new System.EventHandler(this.CancelButton_Click);
             // 
             // NextButton
             // 
@@ -549,6 +554,17 @@
             this.NextButton.Text = "Next";
             this.NextButton.UseVisualStyleBackColor = true;
             this.NextButton.Click += new System.EventHandler(this.NextButton_Click);
+            // 
+            // ProductionInfosaveFileDialog
+            // 
+            this.ProductionInfosaveFileDialog.DefaultExt = "txt";
+            this.ProductionInfosaveFileDialog.FileName = "ProductInfo";
+            this.ProductionInfosaveFileDialog.Filter = "text files|*.txt|All Files|*.*";
+            // 
+            // ProductInfoOpenFileDialog
+            // 
+            this.ProductInfoOpenFileDialog.FileName = "ProductInfoOpenFileDialog";
+            this.ProductInfoOpenFileDialog.Filter = "text files|*.txt|All Files|*.*";
             // 
             // ProductionInfoForm
             // 
@@ -598,8 +614,8 @@
         private System.Windows.Forms.TextBox ProductIDtextBox;
         private System.Windows.Forms.Label Costlabel;
         private System.Windows.Forms.Label Conditionlabel;
-        private System.Windows.Forms.TextBox CosttextBox;
-        private System.Windows.Forms.TextBox ConditionTextBox;
+        public System.Windows.Forms.TextBox CosttextBox;
+        public System.Windows.Forms.TextBox ConditionTextBox;
         private System.Windows.Forms.GroupBox ProductInfoGroupBox;
         private System.Windows.Forms.Label Manufacturerlabel;
         private System.Windows.Forms.Label OSlabel;
@@ -620,8 +636,8 @@
         private System.Windows.Forms.Label CPUSpeedlabel;
         private System.Windows.Forms.TextBox CPUNumbertextBox;
         private System.Windows.Forms.Label CPUNumberabel;
-        private System.Windows.Forms.TextBox RAMSizetextBox;
-        private System.Windows.Forms.Label RAMlSizeabel;
+        private System.Windows.Forms.TextBox ScreenSizetextBox;
+        private System.Windows.Forms.Label ScreenSizeabel;
         private System.Windows.Forms.TextBox CPUTypetextBox;
         private System.Windows.Forms.Label CPUTypelabel;
         private System.Windows.Forms.TextBox CPUBrandtextBox;
@@ -632,5 +648,7 @@
         private System.Windows.Forms.Button SelectAnotherProductButton;
         private System.Windows.Forms.Button CancelButton;
         private System.Windows.Forms.Button NextButton;
+        private System.Windows.Forms.SaveFileDialog ProductionInfosaveFileDialog;
+        private System.Windows.Forms.OpenFileDialog ProductInfoOpenFileDialog;
     }
 }

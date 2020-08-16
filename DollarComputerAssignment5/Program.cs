@@ -13,6 +13,7 @@ namespace DollarComputerAssignment5
         public static SelectForm selectForm;
         public static ProductionInfoForm productionInfoForm;
         public static OrderForm orderForm;
+        
         /// <summary>
         /// The main entry point for the application.
         /// </summary>
