@@ -51,6 +51,11 @@ namespace DollarComputerAssignment5
             TotalTextBox.Text = (computerPrice * 1.13).ToString();
         }
 
-        
+        private void FinishButton_Click(object sender, EventArgs e)
+        {
+            string message =
+                "Thanks for purchasing computer today!\n\n Your order will be processed in 7-10 business days!";
+            MessageBox.Show(message);
+        }
     }
 }
