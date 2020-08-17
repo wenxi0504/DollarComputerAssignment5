@@ -108,9 +108,10 @@ namespace DollarComputerAssignment5
 
         public void ProductionInfoForm_Load(object sender, EventArgs e)
         {
-            CosttextBox.Text = Program.selectForm.cost;
+          
             ProductIDtextBox.Text = Program.selectForm.productID;
             ConditionTextBox.Text = Program.selectForm.condition;
+            CosttextBox.Text = Program.selectForm.cost;
             PlatformTextBox.Text = Program.selectForm.platform;
             OStextBox.Text = Program.selectForm.os;
             ManufacturertextBox.Text = Program.selectForm.manufacturer;
@@ -136,14 +137,14 @@ namespace DollarComputerAssignment5
         private void SelectAnotherProductButton_Click(object sender, EventArgs e)
         {
             Program.selectForm.Show();
-            this.Hide();
             ResetProductionInfoForm();
-           
+            this.Hide();
+
         }
 
         private void ResetProductionInfoForm()
         {
-            ProductIDtextBox.Text= string.Empty;
+            ProductIDtextBox.Text = string.Empty;
             ConditionTextBox.Text = " ";
             CosttextBox.Text = " ";
             PlatformTextBox.Text = " ";

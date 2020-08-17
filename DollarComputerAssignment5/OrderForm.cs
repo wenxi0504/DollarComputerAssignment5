@@ -12,6 +12,7 @@ namespace DollarComputerAssignment5
 {
     public partial class OrderForm : Form
     {
+        
         public OrderForm()
         {
             InitializeComponent();
@@ -44,8 +45,12 @@ namespace DollarComputerAssignment5
             GPUTypeTextBox.Text = Program.productionInfoForm.PGPUType;
             WebcamtextBox.Text = Program.productionInfoForm.PWebCam;
             OStextBox.Text = Program.productionInfoForm.POS;
+            PriceTextBox.Text = Program.productionInfoForm.PCost; 
+            double computerPrice = Convert.ToDouble(PriceTextBox.Text);
+            TaxtextBox.Text = (computerPrice * 0.13).ToString();
+            TotalTextBox.Text = (computerPrice * 1.13).ToString();
         }
 
-       
+        
     }
 }

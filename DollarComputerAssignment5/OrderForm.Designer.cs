@@ -70,7 +70,7 @@
             this.YourPriceGroupBox = new System.Windows.Forms.GroupBox();
             this.TotalTextBox = new System.Windows.Forms.TextBox();
             this.Totallabel = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.TaxtextBox = new System.Windows.Forms.TextBox();
             this.Taxlabel = new System.Windows.Forms.Label();
             this.PriceTextBox = new System.Windows.Forms.TextBox();
             this.Pricelabel = new System.Windows.Forms.Label();
@@ -479,7 +479,7 @@
             // 
             this.YourPriceGroupBox.Controls.Add(this.TotalTextBox);
             this.YourPriceGroupBox.Controls.Add(this.Totallabel);
-            this.YourPriceGroupBox.Controls.Add(this.textBox1);
+            this.YourPriceGroupBox.Controls.Add(this.TaxtextBox);
             this.YourPriceGroupBox.Controls.Add(this.Taxlabel);
             this.YourPriceGroupBox.Controls.Add(this.PriceTextBox);
             this.YourPriceGroupBox.Controls.Add(this.Pricelabel);
@@ -509,14 +509,14 @@
             this.Totallabel.Text = "Total";
             this.Totallabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // textBox1
+            // TaxtextBox
             // 
-            this.textBox1.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.textBox1.Location = new System.Drawing.Point(119, 116);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(178, 26);
-            this.textBox1.TabIndex = 30;
+            this.TaxtextBox.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.TaxtextBox.Location = new System.Drawing.Point(119, 116);
+            this.TaxtextBox.Name = "TaxtextBox";
+            this.TaxtextBox.ReadOnly = true;
+            this.TaxtextBox.Size = new System.Drawing.Size(178, 26);
+            this.TaxtextBox.TabIndex = 30;
             // 
             // Taxlabel
             // 
@@ -648,7 +648,7 @@
         private System.Windows.Forms.GroupBox YourPriceGroupBox;
         private System.Windows.Forms.TextBox TotalTextBox;
         private System.Windows.Forms.Label Totallabel;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox TaxtextBox;
         private System.Windows.Forms.Label Taxlabel;
         private System.Windows.Forms.TextBox PriceTextBox;
         private System.Windows.Forms.Label Pricelabel;

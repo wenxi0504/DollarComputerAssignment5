@@ -44,9 +44,9 @@ namespace DollarComputerAssignment5
         private void ComputerHardwareDataGridView_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             
-            Program.selectForm.cost= ComputerHardwareDataGridView.SelectedRows[0].Cells[3].Value.ToString();
-            Program.selectForm.manufacturer = ComputerHardwareDataGridView.SelectedRows[0].Cells[1].Value.ToString();
-            Program.selectForm.model = ComputerHardwareDataGridView.SelectedRows[0].Cells[2].Value.ToString();
+            Program.selectForm.cost= ComputerHardwareDataGridView.SelectedRows[0].Cells[1].Value.ToString();
+            Program.selectForm.manufacturer = ComputerHardwareDataGridView.SelectedRows[0].Cells[2].Value.ToString();
+            Program.selectForm.model = ComputerHardwareDataGridView.SelectedRows[0].Cells[3].Value.ToString();
             SelectionOutputTextBox.Text = $" {manufacturer} {model} {cost} ";
             NextSelectButton.Enabled = true;
             Program.selectForm.productID = ComputerHardwareDataGridView.SelectedRows[0].Cells[0].Value.ToString();
