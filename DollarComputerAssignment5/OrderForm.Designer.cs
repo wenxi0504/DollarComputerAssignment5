@@ -31,7 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(OrderForm));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.printToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.PrintOrderToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.extToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.editToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.backToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -100,17 +100,18 @@
             // printToolStripMenuItem
             // 
             this.printToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.exitToolStripMenuItem,
+            this.PrintOrderToolStripMenuItem,
             this.extToolStripMenuItem});
             this.printToolStripMenuItem.Name = "printToolStripMenuItem";
             this.printToolStripMenuItem.Size = new System.Drawing.Size(54, 29);
             this.printToolStripMenuItem.Text = "File";
             // 
-            // exitToolStripMenuItem
+            // PrintOrderToolStripMenuItem
             // 
-            this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(150, 34);
-            this.exitToolStripMenuItem.Text = "Print";
+            this.PrintOrderToolStripMenuItem.Name = "PrintOrderToolStripMenuItem";
+            this.PrintOrderToolStripMenuItem.Size = new System.Drawing.Size(150, 34);
+            this.PrintOrderToolStripMenuItem.Text = "Print";
+            this.PrintOrderToolStripMenuItem.Click += new System.EventHandler(this.PrintOrderToolStripMenuItem_Click);
             // 
             // extToolStripMenuItem
             // 
@@ -145,8 +146,9 @@
             // aboutToolStripMenuItem
             // 
             this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
-            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(164, 34);
+            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
             this.aboutToolStripMenuItem.Text = "About";
+            this.aboutToolStripMenuItem.Click += new System.EventHandler(this.aboutToolStripMenuItem_Click);
             // 
             // SystemComponentsGroupBox
             // 
@@ -610,7 +612,7 @@
 
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem printToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem PrintOrderToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem extToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem editToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem backToolStripMenuItem;

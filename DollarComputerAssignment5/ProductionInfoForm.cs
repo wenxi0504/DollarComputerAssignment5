@@ -108,23 +108,39 @@ namespace DollarComputerAssignment5
 
         public void ProductionInfoForm_Load(object sender, EventArgs e)
         {
-          
-            ProductIDtextBox.Text = Program.selectForm.productID;
-            ConditionTextBox.Text = Program.selectForm.condition;
-            CosttextBox.Text = Program.selectForm.cost;
-            PlatformTextBox.Text = Program.selectForm.platform;
-            OStextBox.Text = Program.selectForm.os;
-            ManufacturertextBox.Text = Program.selectForm.manufacturer;
-            ModeltextBox.Text = Program.selectForm.model;
-            MemorytextBox.Text = Program.selectForm.memory;
-            ScreenSizetextBox.Text = Program.selectForm.screenSize;
-            HDDtextBox.Text = Program.selectForm.hdd;
-            CPUBrandtextBox.Text = Program.selectForm.cpuBrand;
-            CPUNumbertextBox.Text = Program.selectForm.cpuNumber;
-            GPUTypetextBox.Text = Program.selectForm.gpuType;
-            CPUTypetextBox.Text = Program.selectForm.cpuType;
-            CPUSpeedtextBox.Text = Program.selectForm.cpuSpeed;
-            WebCamtextBox.Text = Program.selectForm.webcam;
+            //ProductIDtextBox.Text = Program.selectForm.productID;
+            //ConditionTextBox.Text = Program.selectForm.condition;
+            //CosttextBox.Text = Program.selectForm.cost;
+            //PlatformTextBox.Text = Program.selectForm.platform;
+            //OStextBox.Text = Program.selectForm.os;
+            //ManufacturertextBox.Text = Program.selectForm.manufacturer;
+            //ModeltextBox.Text = Program.selectForm.model;
+            //MemorytextBox.Text = Program.selectForm.memory;
+            //ScreenSizetextBox.Text = Program.selectForm.screenSize;
+            //HDDtextBox.Text = Program.selectForm.hdd;
+            //CPUBrandtextBox.Text = Program.selectForm.cpuBrand;
+            //CPUNumbertextBox.Text = Program.selectForm.cpuNumber;
+            //GPUTypetextBox.Text = Program.selectForm.gpuType;
+            //CPUTypetextBox.Text = Program.selectForm.cpuType;
+            //CPUSpeedtextBox.Text = Program.selectForm.cpuSpeed;
+            //WebCamtextBox.Text = Program.selectForm.webcam;
+
+            ProductIDtextBox.Text = ProductInfo.productID;
+            ConditionTextBox.Text = ProductInfo.condition;
+            CosttextBox.Text = ProductInfo.cost;
+            PlatformTextBox.Text = ProductInfo.platform;
+            OStextBox.Text = ProductInfo.os;
+            ManufacturertextBox.Text = ProductInfo.manufacturer;
+            ModeltextBox.Text = ProductInfo.model;
+            MemorytextBox.Text = ProductInfo.memory;
+            ScreenSizetextBox.Text = ProductInfo.screenSize;
+            HDDtextBox.Text = ProductInfo.hdd;
+            CPUBrandtextBox.Text = ProductInfo.cpuBrand;
+            CPUNumbertextBox.Text = ProductInfo.cpuNumber;
+            GPUTypetextBox.Text = ProductInfo.gpuType;
+            CPUTypetextBox.Text = ProductInfo.cpuType;
+            CPUSpeedtextBox.Text = ProductInfo.cpuSpeed;
+            WebCamtextBox.Text = ProductInfo.webcam;
             NextButton.Enabled = true;
 
         }
@@ -227,28 +243,45 @@ namespace DollarComputerAssignment5
 
                 while (!streamReader.EndOfStream)
                 {
-                    ProductIDtextBox.Text = streamReader.ReadLine();
-                    ConditionTextBox.Text = streamReader.ReadLine();
-                    CosttextBox.Text = streamReader.ReadLine();
-                    PlatformTextBox.Text = streamReader.ReadLine();
-                    OStextBox.Text = streamReader.ReadLine();
-                    ManufacturertextBox.Text = streamReader.ReadLine();
-                    ModeltextBox.Text = streamReader.ReadLine();
-                    MemorytextBox.Text = streamReader.ReadLine();
-                    ScreenSizetextBox.Text = streamReader.ReadLine();
-                    HDDtextBox.Text = streamReader.ReadLine();
-                    CPUBrandtextBox.Text = streamReader.ReadLine();
-                    CPUNumbertextBox.Text = streamReader.ReadLine();
-                    GPUTypetextBox.Text = streamReader.ReadLine();
-                    CPUTypetextBox.Text= streamReader.ReadLine();
-                    CPUSpeedtextBox.Text = streamReader.ReadLine();
-                    WebCamtextBox.Text= streamReader.ReadLine();
+                    //ProductIDtextBox.Text = streamReader.ReadLine();
+                    //ConditionTextBox.Text = streamReader.ReadLine();
+                    //CosttextBox.Text = streamReader.ReadLine();
+                    //PlatformTextBox.Text = streamReader.ReadLine();
+                    //OStextBox.Text = streamReader.ReadLine();
+                    //ManufacturertextBox.Text = streamReader.ReadLine();
+                    //ModeltextBox.Text = streamReader.ReadLine();
+                    //MemorytextBox.Text = streamReader.ReadLine();
+                    //ScreenSizetextBox.Text = streamReader.ReadLine();
+                    //HDDtextBox.Text = streamReader.ReadLine();
+                    //CPUBrandtextBox.Text = streamReader.ReadLine();
+                    //CPUNumbertextBox.Text = streamReader.ReadLine();
+                    //GPUTypetextBox.Text = streamReader.ReadLine();
+                    //CPUTypetextBox.Text= streamReader.ReadLine();
+                    //CPUSpeedtextBox.Text = streamReader.ReadLine();
+                    //WebCamtextBox.Text= streamReader.ReadLine();
+
+                    ProductInfo.productID = streamReader.ReadLine();
+                    ProductInfo.condition = streamReader.ReadLine();
+                    ProductInfo.cost = streamReader.ReadLine();
+                    ProductInfo.platform = streamReader.ReadLine();
+                    ProductInfo.os = streamReader.ReadLine();
+                    ProductInfo.manufacturer = streamReader.ReadLine();
+                    ProductInfo.model = streamReader.ReadLine();
+                    ProductInfo.memory = streamReader.ReadLine();
+                    ProductInfo.screenSize = streamReader.ReadLine();
+                    ProductInfo.hdd = streamReader.ReadLine();
+                    ProductInfo.cpuBrand = streamReader.ReadLine();
+                    ProductInfo.cpuNumber = streamReader.ReadLine();
+                    ProductInfo.gpuType = streamReader.ReadLine();
+                    ProductInfo.cpuType = streamReader.ReadLine();
+                    ProductInfo.cpuSpeed = streamReader.ReadLine();
+                    ProductInfo.webcam = streamReader.ReadLine();
                 }
 
                 // cleanup
                 streamReader.Close();
             }
-
+            ProductionInfoForm_Load(sender,e);
 
 
 

@@ -29,6 +29,7 @@ namespace DollarComputerAssignment5
         public string cpuSpeed { get; set; }
 
         public string webcam { get; set; }
+        
         public SelectForm()
         {
             InitializeComponent();
@@ -43,25 +44,43 @@ namespace DollarComputerAssignment5
 
         private void ComputerHardwareDataGridView_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            
-            Program.selectForm.cost= ComputerHardwareDataGridView.SelectedRows[0].Cells[1].Value.ToString();
-            Program.selectForm.manufacturer = ComputerHardwareDataGridView.SelectedRows[0].Cells[2].Value.ToString();
-            Program.selectForm.model = ComputerHardwareDataGridView.SelectedRows[0].Cells[3].Value.ToString();
-            SelectionOutputTextBox.Text = $" {manufacturer} {model} {cost} ";
+
+            //Program.selectForm.cost= ComputerHardwareDataGridView.SelectedRows[0].Cells[1].Value.ToString();
+            //Program.selectForm.manufacturer = ComputerHardwareDataGridView.SelectedRows[0].Cells[2].Value.ToString();
+            //Program.selectForm.model = ComputerHardwareDataGridView.SelectedRows[0].Cells[3].Value.ToString();
+            //SelectionOutputTextBox.Text = $" {manufacturer} {model} {cost} ";
+            //NextSelectButton.Enabled = true;
+            //Program.selectForm.productID = ComputerHardwareDataGridView.SelectedRows[0].Cells[0].Value.ToString();
+            //Program.selectForm.condition = ComputerHardwareDataGridView.SelectedRows[0].Cells[14].Value.ToString();
+            //Program.selectForm.platform = ComputerHardwareDataGridView.SelectedRows[0].Cells[16].Value.ToString();
+            //Program.selectForm.os = ComputerHardwareDataGridView.SelectedRows[0].Cells[15].Value.ToString();
+            //Program.selectForm.memory = ComputerHardwareDataGridView.SelectedRows[0].Cells[5].Value.ToString();
+            //Program.selectForm.screenSize = ComputerHardwareDataGridView.SelectedRows[0].Cells[7].Value.ToString();
+            //Program.selectForm.hdd = ComputerHardwareDataGridView.SelectedRows[0].Cells[17].Value.ToString();
+            //Program.selectForm.cpuBrand = ComputerHardwareDataGridView.SelectedRows[0].Cells[10].Value.ToString();
+            //Program.selectForm.cpuSpeed = ComputerHardwareDataGridView.SelectedRows[0].Cells[12].Value.ToString();
+            //Program.selectForm.cpuType = ComputerHardwareDataGridView.SelectedRows[0].Cells[11].Value.ToString();
+            //Program.selectForm.cpuNumber = ComputerHardwareDataGridView.SelectedRows[0].Cells[13].Value.ToString();
+            //Program.selectForm.webcam = ComputerHardwareDataGridView.SelectedRows[0].Cells[30].Value.ToString();
+            //Program.selectForm.gpuType = ComputerHardwareDataGridView.SelectedRows[0].Cells[19].Value.ToString();
+            ProductInfo.cost = ComputerHardwareDataGridView.SelectedRows[0].Cells[1].Value.ToString();
+            ProductInfo.manufacturer = ComputerHardwareDataGridView.SelectedRows[0].Cells[2].Value.ToString();
+            ProductInfo.model = ComputerHardwareDataGridView.SelectedRows[0].Cells[3].Value.ToString();
+            SelectionOutputTextBox.Text = $" {ProductInfo.manufacturer} {ProductInfo.model} {ProductInfo.cost} ";
             NextSelectButton.Enabled = true;
-            Program.selectForm.productID = ComputerHardwareDataGridView.SelectedRows[0].Cells[0].Value.ToString();
-            Program.selectForm.condition = ComputerHardwareDataGridView.SelectedRows[0].Cells[14].Value.ToString();
-            Program.selectForm.platform = ComputerHardwareDataGridView.SelectedRows[0].Cells[16].Value.ToString();
-            Program.selectForm.os = ComputerHardwareDataGridView.SelectedRows[0].Cells[15].Value.ToString();
-            Program.selectForm.memory = ComputerHardwareDataGridView.SelectedRows[0].Cells[5].Value.ToString();
-            Program.selectForm.screenSize = ComputerHardwareDataGridView.SelectedRows[0].Cells[7].Value.ToString();
-            Program.selectForm.hdd = ComputerHardwareDataGridView.SelectedRows[0].Cells[17].Value.ToString();
-            Program.selectForm.cpuBrand = ComputerHardwareDataGridView.SelectedRows[0].Cells[10].Value.ToString();
-            Program.selectForm.cpuSpeed = ComputerHardwareDataGridView.SelectedRows[0].Cells[12].Value.ToString();
-            Program.selectForm.cpuType = ComputerHardwareDataGridView.SelectedRows[0].Cells[11].Value.ToString();
-            Program.selectForm.cpuNumber = ComputerHardwareDataGridView.SelectedRows[0].Cells[13].Value.ToString();
-            Program.selectForm.webcam = ComputerHardwareDataGridView.SelectedRows[0].Cells[30].Value.ToString();
-            Program.selectForm.gpuType = ComputerHardwareDataGridView.SelectedRows[0].Cells[19].Value.ToString();
+            ProductInfo.productID = ComputerHardwareDataGridView.SelectedRows[0].Cells[0].Value.ToString();
+            ProductInfo.condition = ComputerHardwareDataGridView.SelectedRows[0].Cells[14].Value.ToString();
+            ProductInfo.platform = ComputerHardwareDataGridView.SelectedRows[0].Cells[16].Value.ToString();
+            ProductInfo.os = ComputerHardwareDataGridView.SelectedRows[0].Cells[15].Value.ToString();
+            ProductInfo.memory = ComputerHardwareDataGridView.SelectedRows[0].Cells[5].Value.ToString();
+            ProductInfo.screenSize = ComputerHardwareDataGridView.SelectedRows[0].Cells[7].Value.ToString();
+            ProductInfo.hdd = ComputerHardwareDataGridView.SelectedRows[0].Cells[17].Value.ToString();
+            ProductInfo.cpuBrand = ComputerHardwareDataGridView.SelectedRows[0].Cells[10].Value.ToString();
+            ProductInfo.cpuSpeed = ComputerHardwareDataGridView.SelectedRows[0].Cells[12].Value.ToString();
+            ProductInfo.cpuType = ComputerHardwareDataGridView.SelectedRows[0].Cells[11].Value.ToString();
+            ProductInfo.cpuNumber = ComputerHardwareDataGridView.SelectedRows[0].Cells[13].Value.ToString();
+            ProductInfo.webcam = ComputerHardwareDataGridView.SelectedRows[0].Cells[30].Value.ToString();
+            ProductInfo.gpuType = ComputerHardwareDataGridView.SelectedRows[0].Cells[19].Value.ToString();
         }
 
         private void CancelSelectButton_Click(object sender, EventArgs e)
@@ -73,7 +92,9 @@ namespace DollarComputerAssignment5
         {
             Program.productionInfoForm.Show();
             this.Hide();
-           
+            Program.productionInfoForm.ProductionInfoForm_Load(sender, e);
+
+
 
         }
       
