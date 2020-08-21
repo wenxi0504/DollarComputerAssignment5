@@ -5,10 +5,14 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace DollarComputerAssignment5
-{
+{   //--Author's name:Wen Xu
+    //--Author’s student number:301098127,
+    //--Date last Modified:20,August,2020,
+    //--Program description:1.0.0 version is to build multiple forms UI and project for purchasing
+    //computers.
+    //--Revision History:1.0.0
     static class Program
     {
-        public static SplashForm splashForm;
         public static StartForm startForm;
         public static SelectForm selectForm;
         public static ProductionInfoForm productionInfoForm;

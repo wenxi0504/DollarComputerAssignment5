@@ -32,9 +32,9 @@
             this.OrderComputerTodaylabel = new System.Windows.Forms.Label();
             this.StartPhotoPictureBox = new System.Windows.Forms.PictureBox();
             this.StartButtonsGroupBox = new System.Windows.Forms.GroupBox();
-            this.NewOrderButton = new System.Windows.Forms.Button();
-            this.SavedOrderButton = new System.Windows.Forms.Button();
             this.ExitButton = new System.Windows.Forms.Button();
+            this.SavedOrderButton = new System.Windows.Forms.Button();
+            this.NewOrderButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.StartPhotoPictureBox)).BeginInit();
             this.StartButtonsGroupBox.SuspendLayout();
             this.SuspendLayout();
@@ -71,16 +71,16 @@
             this.StartButtonsGroupBox.TabIndex = 2;
             this.StartButtonsGroupBox.TabStop = false;
             // 
-            // NewOrderButton
+            // ExitButton
             // 
-            this.NewOrderButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.NewOrderButton.Location = new System.Drawing.Point(4, 4);
-            this.NewOrderButton.Name = "NewOrderButton";
-            this.NewOrderButton.Size = new System.Drawing.Size(186, 50);
-            this.NewOrderButton.TabIndex = 0;
-            this.NewOrderButton.Text = "NewOrder";
-            this.NewOrderButton.UseVisualStyleBackColor = true;
-            this.NewOrderButton.Click += new System.EventHandler(this.NewOrderButton_Click);
+            this.ExitButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ExitButton.Location = new System.Drawing.Point(3, 111);
+            this.ExitButton.Name = "ExitButton";
+            this.ExitButton.Size = new System.Drawing.Size(186, 50);
+            this.ExitButton.TabIndex = 2;
+            this.ExitButton.Text = "Exit";
+            this.ExitButton.UseVisualStyleBackColor = true;
+            this.ExitButton.Click += new System.EventHandler(this.ExitButton_Click);
             // 
             // SavedOrderButton
             // 
@@ -93,27 +93,29 @@
             this.SavedOrderButton.UseVisualStyleBackColor = true;
             this.SavedOrderButton.Click += new System.EventHandler(this.SavedOrderButton_Click);
             // 
-            // ExitButton
+            // NewOrderButton
             // 
-            this.ExitButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ExitButton.Location = new System.Drawing.Point(3, 111);
-            this.ExitButton.Name = "ExitButton";
-            this.ExitButton.Size = new System.Drawing.Size(186, 50);
-            this.ExitButton.TabIndex = 2;
-            this.ExitButton.Text = "Exit";
-            this.ExitButton.UseVisualStyleBackColor = true;
-            this.ExitButton.Click += new System.EventHandler(this.ExitButton_Click);
+            this.NewOrderButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.NewOrderButton.Location = new System.Drawing.Point(4, 4);
+            this.NewOrderButton.Name = "NewOrderButton";
+            this.NewOrderButton.Size = new System.Drawing.Size(186, 50);
+            this.NewOrderButton.TabIndex = 0;
+            this.NewOrderButton.Text = "NewOrder";
+            this.NewOrderButton.UseVisualStyleBackColor = true;
+            this.NewOrderButton.Click += new System.EventHandler(this.NewOrderButton_Click);
             // 
             // StartForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(618, 424);
+            this.ControlBox = false;
             this.Controls.Add(this.StartButtonsGroupBox);
             this.Controls.Add(this.StartPhotoPictureBox);
             this.Controls.Add(this.OrderComputerTodaylabel);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "StartForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "StartForm";
             ((System.ComponentModel.ISupportInitialize)(this.StartPhotoPictureBox)).EndInit();
             this.StartButtonsGroupBox.ResumeLayout(false);
